@@ -1,0 +1,26 @@
+allprojects {
+    buildscript {
+        repositories {
+            mavenCentral()
+            google()
+            jcenter()
+            maven { url 'https://dl.bintray.com/jsonlufly/android/' }
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:3.1.0'
+            classpath 'cn.jsonlu.android:plug:1.0.0'
+        }
+    }
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/central" }
+        maven { url "http://repo.commonsware.com" }
+        maven { url 'http://172.31.0.88:8081/nexus/content/repositories/releases' }
+        maven { url 'http://172.31.0.88:8081/nexus/content/repositories/beta' }
+        google()
+        mavenCentral()
+        jcenter()
+    }
+}
+ext {
+    libraryVersionName = '1.1.1'
+}

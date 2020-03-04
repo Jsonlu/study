@@ -1,0 +1,8 @@
+include ':lib'
+include ':baselibrary'
+include ':app'
+include ':log'
+include ':logtest'
+include ':plug'
+include ':alipay'
+include ':xposed'

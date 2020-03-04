@@ -1,0 +1,22 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.60'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
+
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'LSB Example',
+                'Implementation-Version': '1.0',
+                'Main-Class': 'com.test.Main'
+    }
+    baseName = 'lsb-java'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

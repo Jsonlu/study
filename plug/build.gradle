@@ -1,0 +1,50 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'com.jfrog.bintray'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.1.0'
+    implementation 'org.aspectj:aspectjtools:1.9.0'
+    implementation 'org.aspectj:aspectjrt:1.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('../repo')) //仓库的路径，此处是项目根目录下的 repo 的文件夹
+        pom.groupId = 'cn.jsonlu.android'
+        pom.version = '1.0.0'
+    }
+}
+
+buildscript {
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+    }
+}
+
+version = '1.0.0'
+group = 'cn.jsonlu.android'
+
+bintray {
+    user = 'jsonlufly'
+    key = '26009b2a20ee9ce91ddc67100d0b5e7b1df36625'
+    configurations = ['archives']
+    pkg {
+        repo = 'android'
+        name = project.name
+        websiteUrl = 'https://www.jsonlu.top'
+        vcsUrl = 'https://github.com/bintray/gradle-bintray-plugin.git'
+        licenses = ["Apache-2.0"]
+        publish = true
+        version {
+            name = this.version
+            desc = "JsonLu ${this.version}"
+            released = new Date()
+            vcsTag = this.version
+        }
+    }
+}
+

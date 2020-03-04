@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+
+    api 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.android.support:recyclerview-v7:27.1.1'
+//    api 'net.zetetic:android-database-sqlcipher:4.3.0'
+    //for room, add:
+//    api "android.arch.persistence.room:runtime:1.1.1"
+//    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    // CWAC-SafeRoom: A Room<->SQLCipher for Android Bridge
+//    implementation "com.commonsware.cwac:saferoom:0.4.4"
+//    api "com.commonsware.cwac:saferoom:1.2.1"
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    api 'com.alibaba:fastjson:1.1.60.android'
+    api 'com.squareup.retrofit2:retrofit:2.5.0'
+}

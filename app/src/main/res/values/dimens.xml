@@ -1,0 +1,4 @@
+<resources>
+
+    <dimen name="train_border_width">4dp</dimen>
+</resources>

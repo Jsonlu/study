@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">真题</string>
+    <string name="downloaded">已下载</string>
+    <string name="go_download">去下载吧</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确认</string>
+    <string name="jp_d_06">购买确认</string>
+    <string name="good_name">商品信息:%s</string>
+    <string name="good_perice">商品价格:%s 元</string>
+    <string name="good_coupon">随机立减:%s 元</string>
+    <string name="pay_amount">支付金额:%s 元</string>
+    <string name="good_others">不支持退款</string>
+    <string name="take_order">下单...</string>
+    <string name="take_pay">去支付...</string>
+</resources>

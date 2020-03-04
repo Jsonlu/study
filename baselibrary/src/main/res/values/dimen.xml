@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toast_custom_text_size">13sp</dimen>
+    <!-- 提示文字的内边距（上下） -->
+    <dimen name="toast_custom_text_paddingTB">5dp</dimen>
+    <!-- 提示文字的内边距（左右） -->
+    <dimen name="toast_custom_text_paddingLR">8dp</dimen>
+    <!-- 背景的圆角 -->
+    <dimen name="toast_custom_view_bg_corners">5dp</dimen>
+</resources>
